@@ -1,0 +1,78 @@
+from tkinter import*
+from tkinter import ttk
+from PIL import Image, ImageTk
+from tkinter import messagebox
+import mysql.connector
+from cv2 import cv2
+import os
+import csv
+from tkinter import filedialog
+import numpy as np
+from time import strftime
+from datetime import datetime
+
+class Developer:
+    def __init__(self, root):
+        self.root = root
+        self.root.geometry = ("1366x768+0+0")
+        self.root.title("About Developer")
+
+        title_lbl = Label(self.root, text="DVELOPER'S SECTION",
+                          font=("times new roman", 35, "bold"), bg="white", fg="navyblue")
+        title_lbl.place(x=0, y=0, width=1366, height=38)
+
+        img_top = Image.open(
+            r"D:\face\clg_img\img\dev.jpg")
+        img_top = img_top.resize((1366, 700), Image.ANTIALIAS)
+        self.photoimage_top = ImageTk.PhotoImage(img_top)
+
+        top_lbl = Label(self.root, image=self.photoimage_top)
+        top_lbl.place(x=0, y=40, width=1366, height=700)
+
+         # frame
+        frame_dev = Frame(top_lbl, bd=2, bg="white")
+        frame_dev.place(x=850, y=0, width=500, height=550)
+
+        img_my = Image.open(
+            r"C:\Users\HP\Pictures\devloper.jpg")
+        img_my = img_my.resize((200, 300), Image.ANTIALIAS)
+        self.photoimage_my = ImageTk.PhotoImage(img_my)
+
+        my_lbl = Label(frame_dev, image=self.photoimage_my)
+        my_lbl.place(x=300, y=0, width=200, height=300)
+        
+        # Developer INFO
+        dev_label1 = Label(frame_dev, text="Hello users, I am Rehan.", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label1.place(x=0,y=5)
+
+        dev_label2 = Label(frame_dev, text="I am a B.Tech student.", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label2.place(x=0,y=30)
+
+        dev_label3 = Label(frame_dev, text="This is my first ever software", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label3.place(x=0,y=60)
+
+        dev_label4 = Label(frame_dev, text="I'm persuing my degree from ", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label4.place(x=0,y=95)
+
+        dev_label5 = Label(frame_dev, text="DCRUSTM.", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label5.place(x=0,y=135)
+
+        dev_label6 = Label(frame_dev, text="  Nice to see you", font=(
+            "times new roman", 15, "bold"), bg="white")
+        dev_label6.place(x=0,y=180)
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    root = Tk()
+    obj = Developer(root)
+    root.mainloop()
